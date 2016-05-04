@@ -37,7 +37,7 @@ namespace Summative_3
             labelTime.BackColor = Color.FromArgb(140, 0, 0, 0);
             labelCity.BackColor = Color.FromArgb(140, 0, 0, 0);
 
-            LoadData();
+            LoadData(0);
         }
 
         private void ButtonRegions(int x, int y, Color colour)
@@ -67,15 +67,16 @@ namespace Summative_3
             labelTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
-        private void LoadData()
+        private void LoadData(int day)
         {
             labelCity.Text = MainForm.city;
-            
-            for (int i = 0; i <= 5; i++)
-            {
-                label1.Text += MainForm.dates[i];
+            labelDayTemp.Text = MainForm.days[day].temperatureDay + "°";
+            labelHighTemp.Text = MainForm.days[day].temperatureMax + "° ↑";
+            labelLowTemp.Text = MainForm.days[day].temperatureMin + "° ↓";
 
-            }
+            labelWind.Text = MainForm.days[day].windSpeedName + MainForm.days[day].windSpeedValue + MainForm.days[day].windDirection;
+
+            labelCloud.Text = MainForm.days[day].cloudsName;
         }
     }
 }

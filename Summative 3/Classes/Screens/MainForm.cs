@@ -16,6 +16,7 @@ namespace Summative_3
     {
         public static string city, date;
         public static string[] dates = new string[6];
+        public static List<Day> days = new List<Day>();
 
         public MainForm()
         {
@@ -53,6 +54,8 @@ namespace Summative_3
 
         private void ExtractForecast()
         {
+            string date, windDirection, windName, cloudName, windSpeed, tMax, tMin, tDay;
+
             XmlDocument doc = new XmlDocument();
             doc.Load("WeatherData7Day.xml");
 
@@ -60,19 +63,10 @@ namespace Summative_3
             XmlNode parent;
             parent = doc.DocumentElement;
 
-
+            // Dates
             for (int i = 0; i <= 5; i++)
             {
-
-                // How to change the month when a certain number of days have been reached and what about the months that have only 30 days or 29.
-                //Temporary fix
-                int a = 0;
-                if (DateTime.Now.AddDays(i).ToString() == "1")
-                {
-                    a++;
-                }
-
-                date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.AddMonths(a).ToString("MM") + "-" + DateTime.Now.AddDays(i).Day.ToString();
+                date = DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.AddDays(i).Day.ToString();
                 dates[i] = date;
             }
 
@@ -95,7 +89,46 @@ namespace Summative_3
                     {
                         if (gChild.Name == "time")
                         {
+                            for (int i = 0; i < dates.Count(); i++)
+                            {
+                                if (gChild.Attributes["day"].Value == dates[i])
+                                {
+                                    
+                                    date = dates[i];
 
+                                    foreach (XmlNode ggchild in gChild.ChildNodes)
+                                    {
+                                        
+
+                                        switch (ggchild.Name)
+                                        {
+                                            case "windDirection":
+                                                windDirection = ggchild.Attributes["name"].Value;
+                                                break;
+
+                                            case "windSpeed":
+                                                windSpeed = ggchild.Attributes["name"].Value;
+                                                break;
+
+                                            case "temperature":
+                                                tDay = ggchild.Attributes["day"].Value;
+                                                tMax = ggchild.Attributes["max"].Value;
+                                                tMin = ggchild.Attributes["min"].Value;
+                                                break;
+
+                                            case "clouds":
+                                                cloudName = ggchild.Attributes["value"].Value;
+                                                break;
+
+                                            default:
+                                                break;
+                                        }
+
+                                        Day d = new Day(date, windName, windDirection, cloudName, tDay, tMax, tMin, windSpeed);
+                                        days.Add(d);
+                                    }
+                                }
+                            }
                             
                         }
                     }

@@ -8,32 +8,35 @@ namespace Summative_3
 {
     class Day
     {
-        public static string date, cityName, countryName, windSpeedName, windDirection, cloudsName;
+        public string date, windSpeedName, windDirection, cloudsName, windSpeedValue;
 
-        public static int temperatureDay, temperatureMorning, temperatureEvening, temperatureNight,
-            temperatureMax, temperatureMin, humidityValue, windSpeedValue, precipitation;
+        public string temperatureDay, temperatureMax, temperatureMin;
 
-        public Day(string _date, string _cityName, string _countryName, string _windSpeedName, 
-            string _windDirection, string _cloudsName, int _temperatureDay, int _temperatureMorning, 
-            int _temperatureEvening, int _temperatureNight, int _temperatureMax, int _temperatureMin,
-            int _humidityValue, int _windSpeedValue, int _precipitation)
+
+        /// <summary>
+        /// Constructor Method for a day
+        /// </summary>
+        /// <param name="_date">Date</param>
+        /// <param name="_windSpeedName">Wind type</param>
+        /// <param name="_windDirection">Wind Direction: N, E, W, or S</param>
+        /// <param name="_cloudsName">Type of clouds</param>
+        /// <param name="_temperatureDay">Average Temperature</param>
+        /// <param name="_temperatureMax">Max Temperature</param>
+        /// <param name="_temperatureMin">Min Temperature</param>
+        /// <param name="_windSpeedValue">Speed of win</param>
+        public Day(string _date, string _windSpeedName, string _windDirection, 
+            string _cloudsName, string _temperatureDay, string _temperatureMax, string _temperatureMin,
+            string _windSpeedValue)
         {
             _date = date;
-            _cityName = cityName;
-            _countryName = countryName;
             _windSpeedName = windSpeedName;
             _windDirection = windDirection;
             _cloudsName = cloudsName;
 
             _temperatureDay = temperatureDay;
-            _temperatureMorning = temperatureMorning;
-            _temperatureEvening = temperatureEvening;
-            _temperatureNight = temperatureNight;
             _temperatureMax = temperatureMax;
             _temperatureMin = temperatureMin;
-            _humidityValue = humidityValue;
             _windSpeedValue = windSpeedValue;
-            _precipitation = precipitation;
         }
 
 

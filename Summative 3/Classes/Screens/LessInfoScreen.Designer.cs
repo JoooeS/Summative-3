@@ -39,7 +39,14 @@
             this.labelTime = new System.Windows.Forms.Label();
             this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.labelCity = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelDayTemp = new System.Windows.Forms.Label();
+            this.labelHighTemp = new System.Windows.Forms.Label();
+            this.labelWind = new System.Windows.Forms.Label();
+            this.labelCloud = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.labelLowTemp = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDay1
@@ -130,7 +137,7 @@
             // 
             this.labelTime.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelTime.Font = new System.Drawing.Font("Minion Pro SmBd", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTime.ForeColor = System.Drawing.Color.DarkGray;
+            this.labelTime.ForeColor = System.Drawing.Color.White;
             this.labelTime.Location = new System.Drawing.Point(3, 13);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(379, 41);
@@ -147,7 +154,7 @@
             // 
             this.labelCity.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelCity.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCity.ForeColor = System.Drawing.Color.DarkGray;
+            this.labelCity.ForeColor = System.Drawing.Color.White;
             this.labelCity.Location = new System.Drawing.Point(3, 44);
             this.labelCity.Name = "labelCity";
             this.labelCity.Size = new System.Drawing.Size(379, 41);
@@ -155,13 +162,85 @@
             this.labelCity.Text = "City";
             this.labelCity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // labelDayTemp
             // 
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(7, 180);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(359, 38);
-            this.label1.TabIndex = 9;
+            this.labelDayTemp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelDayTemp.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDayTemp.ForeColor = System.Drawing.Color.White;
+            this.labelDayTemp.Location = new System.Drawing.Point(15, 110);
+            this.labelDayTemp.Name = "labelDayTemp";
+            this.labelDayTemp.Size = new System.Drawing.Size(198, 106);
+            this.labelDayTemp.TabIndex = 9;
+            this.labelDayTemp.Text = "70^";
+            this.labelDayTemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelHighTemp
+            // 
+            this.labelHighTemp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelHighTemp.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHighTemp.ForeColor = System.Drawing.Color.White;
+            this.labelHighTemp.Location = new System.Drawing.Point(212, 110);
+            this.labelHighTemp.Name = "labelHighTemp";
+            this.labelHighTemp.Size = new System.Drawing.Size(154, 60);
+            this.labelHighTemp.TabIndex = 10;
+            this.labelHighTemp.Text = "/ 30^";
+            this.labelHighTemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelWind
+            // 
+            this.labelWind.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.labelWind.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWind.ForeColor = System.Drawing.Color.White;
+            this.labelWind.Location = new System.Drawing.Point(15, 216);
+            this.labelWind.Name = "labelWind";
+            this.labelWind.Size = new System.Drawing.Size(351, 54);
+            this.labelWind.TabIndex = 11;
+            this.labelWind.Text = "Wind";
+            this.labelWind.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelCloud
+            // 
+            this.labelCloud.BackColor = System.Drawing.Color.Red;
+            this.labelCloud.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCloud.ForeColor = System.Drawing.Color.White;
+            this.labelCloud.Location = new System.Drawing.Point(15, 270);
+            this.labelCloud.Name = "labelCloud";
+            this.labelCloud.Size = new System.Drawing.Size(351, 54);
+            this.labelCloud.TabIndex = 12;
+            this.labelCloud.Text = "Cloud";
+            this.labelCloud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.label3.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(50, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(351, 54);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Wind";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(15, 318);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(351, 80);
+            this.pictureBox.TabIndex = 13;
+            this.pictureBox.TabStop = false;
+            // 
+            // labelLowTemp
+            // 
+            this.labelLowTemp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelLowTemp.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLowTemp.ForeColor = System.Drawing.Color.White;
+            this.labelLowTemp.Location = new System.Drawing.Point(212, 170);
+            this.labelLowTemp.Name = "labelLowTemp";
+            this.labelLowTemp.Size = new System.Drawing.Size(154, 46);
+            this.labelLowTemp.TabIndex = 14;
+            this.labelLowTemp.Text = "/ 30^";
+            this.labelLowTemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LessInfoScreen
             // 
@@ -170,7 +249,12 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::Summative_3.Properties.Resources.BKG_AuSun;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelLowTemp);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.labelCloud);
+            this.Controls.Add(this.labelWind);
+            this.Controls.Add(this.labelHighTemp);
+            this.Controls.Add(this.labelDayTemp);
             this.Controls.Add(this.labelCity);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.buttonMenu);
@@ -184,6 +268,7 @@
             this.Name = "LessInfoScreen";
             this.Size = new System.Drawing.Size(385, 480);
             this.Load += new System.EventHandler(this.LessInfoScreen_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -200,6 +285,13 @@
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Timer timerTime;
         private System.Windows.Forms.Label labelCity;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelDayTemp;
+        private System.Windows.Forms.Label labelHighTemp;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelWind;
+        private System.Windows.Forms.Label labelCloud;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Label labelLowTemp;
     }
 }
